@@ -23,6 +23,10 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 #define TRIG_PIN 5
 #define ECHO_PIN 18
 
+// Water
+#define WATER_SENSOR_PIN 34
+int waterValue = 0;
+
 // LED dan Buzzer
 #define LED_PIN 2
 #define BUZZER_PIN 4
@@ -80,9 +84,11 @@ void loop() {
   // Update Sensor + OLED + LED + Buzzer setiap 200ms
   if (now - lastSensorUpdate >= sensorInterval) {
     long jarak = bacaJarak();
+    long waterValue = bacaWaterSensor();
     Serial.print("Jarak: ");
     Serial.print(jarak);
-    Serial.println(" cm");
+    Serial.print(" cm | Water: ");
+    Serial.println(waterValue);
 
     display.clearDisplay();
     display.setCursor(0, 20);
@@ -116,15 +122,25 @@ if (WiFi.status() != WL_CONNECTED) {
   }
 
   // Kirim ke ThingSpeak setiap 15 detik
-  if (now - lastThingSpeakUpdate >= thingspeakInterval) {
+if (now - lastThingSpeakUpdate >= thingspeakInterval) {
     long jarak = bacaJarak();
-    int statusCode = ThingSpeak.writeField(channelID, 1, jarak, writeAPIKey);
+    int waterValue = bacaWaterSensor();
+  
+    ThingSpeak.setField(1, jarak);
+    ThingSpeak.setField(2, waterValue);
+
+    int statusCode = ThingSpeak.writeFields(channelID, writeAPIKey);
+
     if (statusCode == 200) {
       Serial.println("Data terkirim ke ThingSpeak");
+      Serial.print("Jarak: ");
+      Serial.print(jarak);
+      Serial.print(" cm | Water: ");
+      Serial.println(waterValue);
     } else {
       Serial.print("Gagal kirim. Kode: ");
       Serial.println(statusCode);
     }
     lastThingSpeakUpdate = now;
-  }
 }
+

@@ -26,6 +26,10 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 // Water
 #define WATER_SENSOR_PIN 34
 int waterValue = 0;
+int bacaWaterSensor() {
+  int value = analogRead(WATER_SENSOR_PIN);
+  return value;
+}
 
 // LED dan Buzzer
 #define LED_PIN 2
@@ -94,7 +98,7 @@ void loop() {
     display.setCursor(0, 20);
 
 if (WiFi.status() != WL_CONNECTED) {
-  Serial.printIn("WiFi terputus, mencoba reconnecting....");
+  Serial.println("WiFi terputus, mencoba reconnecting....");
   WiFi.reconnect();
 }
 

@@ -60,4 +60,4 @@ Program ini dibuat menggunakan ESP32 dengan tujuan membaca sensor jarak ultrason
 ### Instalasi ThingSpeak
 1. Buka ThingSpeak di Web Browser
 2. Buat akun atau Login menggunakan Email
-3. 
+   ![Tampilan Login](img/ts1.png).

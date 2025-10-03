@@ -57,4 +57,7 @@ Program ini dibuat menggunakan ESP32 dengan tujuan membaca sensor jarak ultrason
 ### Gambar Project IOT
 
 
-### Gambar Tampilan ThingSpeak
+### Instalasi ThingSpeak
+1. Buka ThingSpeak di Web Browser
+2. Buat akun atau Login menggunakan Email
+3. 

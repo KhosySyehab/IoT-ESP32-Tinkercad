@@ -55,9 +55,9 @@ Program ini dibuat menggunakan ESP32 dengan tujuan membaca sensor jarak ultrason
 ## Dokumentasi
 
 ### Gambar Project IOT
-![Tampilan Login](images/esp1.png)
-![Tampilan Login](images/esp2.png)
-![Tampilan Login](images/esp3.png)
+![ESP32 Project](images/esp1.jpeg)
+![Water Sensor](images/esp2.jpeg)
+![Serial Monitor](images/esp3.jpeg)
 
 ### Instalasi ThingSpeak
 1. Buka ThingSpeak di Web Browser

@@ -60,4 +60,14 @@ Program ini dibuat menggunakan ESP32 dengan tujuan membaca sensor jarak ultrason
 ### Instalasi ThingSpeak
 1. Buka ThingSpeak di Web Browser
 2. Buat akun atau Login menggunakan Email
-   ![Tampilan Login](img/ts1.png).
+   ![Tampilan Login](images/ts1.png)
+3. Setelah masuk ThingSpeak, klik New Channel
+   ![Tampilan setelah Login](images/ts2.png)
+4. Isi form project yang sesuai dengan yang dibuat dan Save Channel
+   ![Tampilan Form Project](images/ts3.png)
+5. Buka menu API Keys dan catat ID Channel dan Write API Key nya
+   ![Tampilan API Key](images/ts4.png)
+6. Masukkan API Key pada code program
+   <br>![Masukkan API Key](images/ts5.png)
+7. Tampialn akhir setelah berhasil terhubung ke ThingSpeak
+   ![Tampilan Akhir](images/ts6.png)

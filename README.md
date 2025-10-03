@@ -37,7 +37,24 @@ Program ini dibuat menggunakan ESP32 dengan tujuan membaca sensor jarak ultrason
 2. Lampu LED
 3. Sensor Ultrasonic
 4. Rain Water Sensor
-5. Buzzer
-6. Kabel Jumper
-7. Laptop
-8. Kabel USB Data
+5. OLED Display
+6. Buzzer
+7. Kabel Jumper
+8. Laptop
+9. Kabel USB Data
+
+## Alur Kerja Program
+1. ESP32 inisialisasi WiFi, OLED, sensor, dan pin output.
+2. Setiap 1 detik, ESP32 membaca:
+   - Jarak dari sensor ultrasonik.
+   - Nilai sensor air (rata-rata dari beberapa pembacaan).
+   - Menampilkan informasi pada OLED dan mengatur kondisi LED/buzzer.
+3. Setiap 15 detik, ESP32 mengirim data jarak dan air ke server ThingSpeak.
+4. Data dapat dipantau secara real-time melalui grafik ThingSpeak.
+
+## Dokumentasi
+
+### Gambar Project IOT
+
+
+### Gambar Tampilan ThingSpeak
